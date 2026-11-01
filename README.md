@@ -7,7 +7,7 @@ parts of
 > *State Evolution and Universality of Iterated Linear Programs for the Binary Perceptron*, 2026.
 
 It covers Figure 2 (Section 1.4, density 0.40) and the numerical evaluation
-of Section 8 (density 0.60): Table 1 and the three figures of that section.
+of Section 8 (density 0.60): Table 1 and Figure 4.
 Every table and figure can be rebuilt from the saved data in about 15
 seconds, and every experiment can be rerun from scratch (about 20 minutes on
 a laptop).
@@ -18,14 +18,11 @@ a laptop).
 |---|---|---|---|
 | **Figure 2** (Section 1.4): predicted and empirical laws of margins and coordinates, alpha = 0.40, N = 2048, Gaussian and Rademacher | `python3 scripts/make_figure2.py` | `data/alpha040/population/theory_curves.npz`, `data/alpha040/finite_lps/{gaussian,rademacher}_seed940{1..4}.npz` | `scripts/compute_alpha040_theory.py`, `scripts/run_alpha040_lps.py` |
 | **Table 1** (Section 8.2): stopping results of the three population runs | `python3 scripts/stopping_table.py` | `data/section8/population/seed{2047,2718,3141}.json` | `scripts/run_population.py` |
-| **Figure 4** (Section 8.2): population trajectories | `python3 scripts/make_section8_figures.py --figure trajectories` | `data/section8/population/*.json` | `scripts/run_population.py` |
-| **Figure 5** (Section 8.3): distributions after the first three LP rounds | `python3 scripts/make_section8_figures.py --figure distributions` | `data/section8/finite_lps/` (finite LPs and `population_first_three.npz`) | `scripts/run_finite_lps.py` |
-| **Figure 6** (Section 8.3): endpoints | `python3 scripts/make_section8_figures.py --figure endpoints` | `data/section8/population/*.json`, `data/section8/finite_lps/` | both of the above |
+| **Figure 4** (Section 8.2): (a) free fraction of the population runs and the finite LPs, (b) margin versus rounding cost | `python3 scripts/make_section8_figure.py` | `data/section8/population/*.json`, `data/section8/finite_lps/report.json` | `scripts/run_population.py`, `scripts/run_finite_lps.py` |
 
 Figure numbers refer to the current version of the paper. The figures as
-they appear in the paper are in `figures/` (`state-evolution.pdf`,
-`numerics-trajectories.pdf`, `numerics-distributions.pdf`,
-`numerics-endpoints.pdf`, with PNG previews).
+they appear in the paper are in `figures/` (`state-evolution.pdf` and
+`numerics.pdf`, with PNG previews).
 
 ## Installation
 
@@ -50,7 +47,7 @@ problem. They write to `output/` (ignored by git).
 
 ```bash
 python3 scripts/stopping_table.py          # output/stopping_table.tex and output/stopping_summary.json
-python3 scripts/make_section8_figures.py   # output/figures/numerics-{trajectories,distributions,endpoints}.{pdf,png}
+python3 scripts/make_section8_figure.py    # output/figures/numerics.{pdf,png}
 python3 scripts/make_figure2.py            # output/figures/state-evolution.{pdf,png}
 python3 scripts/verify_finite_lps.py       # check of the saved Section 8 LP states
 python3 scripts/verify_alpha040_lps.py     # check of the saved alpha = 0.40 LP states
@@ -59,9 +56,10 @@ python3 scripts/verify_alpha040_lps.py     # check of the saved alpha = 0.40 LP 
 `stopping_table.py` recomputes the rounding loss D_{1,21/5}(q_t), the
 reserve and the resolved-scale checks for every accepted round, confirms that
 each run stopped at its first qualifying round, and writes Table 1 exactly as
-it appears in the paper. In our check with the pinned versions, the three
-Section 8 figures came out byte-for-byte identical to the files in
-`figures/`. Figure 2 was drawn for the paper with Matplotlib 3.10.8; with that
+it appears in the paper. `make_section8_figure.py` checks that the saved
+rounding losses match D_{1,21/5}(q_t) and that every run first passes the
+test at its last round. In our check with the pinned versions, Figure 4 came
+out byte-for-byte identical to `figures/numerics.pdf`. Figure 2 was drawn for the paper with Matplotlib 3.10.8; with that
 version its PNG is identical to `figures/state-evolution.png`, and with 3.9.4
 it is visually identical. Image bytes can also depend on installed fonts.
 
@@ -82,7 +80,7 @@ each for seeds 2047 and 2718, about 7 minutes for seed 3141):
 ```bash
 python3 scripts/run_population.py --output-dir results/population
 python3 scripts/stopping_table.py --input-dir results/population --output-dir results
-python3 scripts/make_section8_figures.py --population-dir results/population --output-dir results/figures
+python3 scripts/make_section8_figure.py --population-dir results/population --output-dir results/figures
 ```
 
 The settings are in `configs/section8.json`: density 0.60, the schedule
@@ -107,13 +105,14 @@ the setting of the paper.
 ```bash
 python3 scripts/run_finite_lps.py --output-dir results/finite_lps
 python3 scripts/verify_finite_lps.py --folder results/finite_lps
-python3 scripts/make_section8_figures.py --finite-dir results/finite_lps --output-dir results/figures
+python3 scripts/make_section8_figure.py --finite-dir results/finite_lps --output-dir results/figures
 ```
 
 Gaussian matrices with N = 1024 and M = 614 for the seeds 6101, 6102 and 6103,
 solved with HiGHS (`scipy.optimize.linprog`, primal and dual feasibility
 tolerances 1e-9). The script first recomputes the population state after
-rounds 1 to 3 (seed 2047) for the comparison panels of Figure 5.
+rounds 1 to 3 (seed 2047) for the comparison of frozen fractions in
+Section 8.3.
 
 **Figure 2** (population curves in a few seconds; LPs in about one minute with
 three worker processes):
