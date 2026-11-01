@@ -1,0 +1,84 @@
+{
+  "description": "Stopping results of the Section 8 population runs (Table 1).",
+  "input_dir": "data/section8/population",
+  "cases": [
+    {
+      "name": "seed2047",
+      "seed": 2047,
+      "column_power": 14,
+      "row_power": 10,
+      "status": "passed_finishing_test",
+      "passed": true,
+      "first_passing_round": 119,
+      "endpoint": {
+        "round": 119,
+        "q": 1.1630577483886962e-06,
+        "kappa": 0.03505912644559178,
+        "rho": 0.0020011114320072337,
+        "tau": 0.3728318026650481,
+        "effective_tau": 0.3721394195671266,
+        "free_squared_norm": 0.32730499134591856,
+        "value_squared": 7.947742956561274e-12,
+        "maximum_scaled_residual": 8.768105915789388e-11,
+        "rounding_loss": 0.028217124895256608,
+        "reserve": 0.006842001550335174,
+        "resolved": true,
+        "passes_finishing_test": true
+      },
+      "elapsed_seconds": 215.55497770800002
+    },
+    {
+      "name": "seed2718",
+      "seed": 2718,
+      "column_power": 14,
+      "row_power": 10,
+      "status": "passed_finishing_test",
+      "passed": true,
+      "first_passing_round": 119,
+      "endpoint": {
+        "round": 119,
+        "q": 9.497816991185837e-07,
+        "kappa": 0.03505912644559178,
+        "rho": 0.001898443378568538,
+        "tau": 0.34436117407274064,
+        "effective_tau": 0.3438278408606378,
+        "free_squared_norm": 0.32817161277583856,
+        "value_squared": 6.3395530268245485e-12,
+        "maximum_scaled_residual": 3.7075469881885005e-11,
+        "rounding_loss": 0.02562533492319668,
+        "reserve": 0.009433791522395103,
+        "resolved": true,
+        "passes_finishing_test": true
+      },
+      "elapsed_seconds": 222.01375108300002
+    },
+    {
+      "name": "seed3141",
+      "seed": 3141,
+      "column_power": 14,
+      "row_power": 11,
+      "status": "passed_finishing_test",
+      "passed": true,
+      "first_passing_round": 119,
+      "endpoint": {
+        "round": 119,
+        "q": 9.099986853615845e-07,
+        "kappa": 0.03505912644559178,
+        "rho": 0.0018831832759438033,
+        "tau": 0.3366973765455687,
+        "effective_tau": 0.3361899873128861,
+        "free_squared_norm": 0.3283945832504206,
+        "value_squared": 6.109071876994066e-12,
+        "maximum_scaled_residual": 1.1153275449010983e-10,
+        "rounding_loss": 0.02510894886080103,
+        "reserve": 0.009950177584790752,
+        "resolved": true,
+        "passes_finishing_test": true
+      },
+      "elapsed_seconds": 362.441223917
+    }
+  ],
+  "all_passed": true,
+  "minimum_reserve": 0.006842001550335174,
+  "endpoint_q_ratio": 1.278087284188284
+}

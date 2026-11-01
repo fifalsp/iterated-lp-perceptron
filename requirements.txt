@@ -1,0 +1,7 @@
+# Versions used for the Section 8 runs and figures (Python 3.9).
+# The alpha = 0.40 data for Figure 2 were produced with numpy 1.26.4 and
+# scipy 1.11.4 (Python 3.11); Figure 2 was drawn with matplotlib 3.10.8.
+# Any Python from 3.9 to 3.12 works with these pins.
+numpy==2.0.2
+scipy==1.13.1
+matplotlib==3.9.4

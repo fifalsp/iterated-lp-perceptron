@@ -1,0 +1,375 @@
+{
+  "description": "Regenerated matrices and objectives; checked the saved alpha = 0.40 LP states.",
+  "folder": "data/alpha040/finite_lps",
+  "tolerance": 1e-12,
+  "all_checks_passed": true,
+  "run_count": 8,
+  "runs": [
+    {
+      "seed": 9401,
+      "ensemble": "gaussian",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 7.993605777301127e-15,
+      "maximum_margin_violation": 2.4440449664098196e-12,
+      "free_fractions": [
+        0.298828125,
+        0.10400390625,
+        0.0263671875
+      ],
+      "lower_endpoint_masses": [
+        0.33642578125,
+        0.43359375,
+        0.4736328125
+      ],
+      "upper_endpoint_masses": [
+        0.36474609375,
+        0.46240234375,
+        0.5
+      ],
+      "margin_atom_masses": [
+        0.7472527472527473,
+        0.2600732600732601,
+        0.06593406593406594
+      ]
+    },
+    {
+      "seed": 9401,
+      "ensemble": "rademacher",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 6.217248937900877e-15,
+      "maximum_margin_violation": 3.0777930759562366e-09,
+      "free_fractions": [
+        0.3017578125,
+        0.111328125,
+        0.033203125
+      ],
+      "lower_endpoint_masses": [
+        0.3447265625,
+        0.44091796875,
+        0.4814453125
+      ],
+      "upper_endpoint_masses": [
+        0.353515625,
+        0.44775390625,
+        0.4853515625
+      ],
+      "margin_atom_masses": [
+        0.7545787545787546,
+        0.2783882783882784,
+        0.08302808302808302
+      ]
+    },
+    {
+      "seed": 9402,
+      "ensemble": "gaussian",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 1.0658141036401503e-14,
+      "maximum_margin_violation": 5.172937633801666e-10,
+      "free_fractions": [
+        0.29541015625,
+        0.1044921875,
+        0.02587890625
+      ],
+      "lower_endpoint_masses": [
+        0.34814453125,
+        0.44580078125,
+        0.48095703125
+      ],
+      "upper_endpoint_masses": [
+        0.3564453125,
+        0.44970703125,
+        0.4931640625
+      ],
+      "margin_atom_masses": [
+        0.7387057387057387,
+        0.2612942612942613,
+        0.06471306471306472
+      ]
+    },
+    {
+      "seed": 9402,
+      "ensemble": "rademacher",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 1.0658141036401503e-14,
+      "maximum_margin_violation": 3.1342761719344026e-11,
+      "free_fractions": [
+        0.2978515625,
+        0.109375,
+        0.03173828125
+      ],
+      "lower_endpoint_masses": [
+        0.35693359375,
+        0.4609375,
+        0.50244140625
+      ],
+      "upper_endpoint_masses": [
+        0.34521484375,
+        0.4296875,
+        0.4658203125
+      ],
+      "margin_atom_masses": [
+        0.7448107448107448,
+        0.27350427350427353,
+        0.07936507936507936
+      ]
+    },
+    {
+      "seed": 9403,
+      "ensemble": "gaussian",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 1.554312234475219e-14,
+      "maximum_margin_violation": 2.9234115128673466e-11,
+      "free_fractions": [
+        0.298828125,
+        0.09423828125,
+        0.0234375
+      ],
+      "lower_endpoint_masses": [
+        0.34423828125,
+        0.4453125,
+        0.48583984375
+      ],
+      "upper_endpoint_masses": [
+        0.35693359375,
+        0.46044921875,
+        0.49072265625
+      ],
+      "margin_atom_masses": [
+        0.7472527472527473,
+        0.23565323565323565,
+        0.05860805860805861
+      ]
+    },
+    {
+      "seed": 9403,
+      "ensemble": "rademacher",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 1.3322676295501878e-14,
+      "maximum_margin_violation": 3.2318592246838307e-13,
+      "free_fractions": [
+        0.30322265625,
+        0.10498046875,
+        0.02685546875
+      ],
+      "lower_endpoint_masses": [
+        0.3525390625,
+        0.451171875,
+        0.49365234375
+      ],
+      "upper_endpoint_masses": [
+        0.34423828125,
+        0.44384765625,
+        0.4794921875
+      ],
+      "margin_atom_masses": [
+        0.7582417582417582,
+        0.2625152625152625,
+        0.06715506715506715
+      ]
+    },
+    {
+      "seed": 9404,
+      "ensemble": "gaussian",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 8.43769498715119e-15,
+      "maximum_margin_violation": 1.8477402941030618e-10,
+      "free_fractions": [
+        0.298828125,
+        0.10107421875,
+        0.02978515625
+      ],
+      "lower_endpoint_masses": [
+        0.3603515625,
+        0.45263671875,
+        0.490234375
+      ],
+      "upper_endpoint_masses": [
+        0.3408203125,
+        0.4462890625,
+        0.47998046875
+      ],
+      "margin_atom_masses": [
+        0.7472527472527473,
+        0.25274725274725274,
+        0.07448107448107448
+      ]
+    },
+    {
+      "seed": 9404,
+      "ensemble": "rademacher",
+      "all_checks_passed": true,
+      "checks": {
+        "matrix_hash": true,
+        "objective_hash": true,
+        "shapes": true,
+        "finite": true,
+        "margins_match_matrix": true,
+        "margin_constraints": true,
+        "box_constraints": true,
+        "frozen_at_endpoints": true,
+        "free_sets_nested": true,
+        "frozen_unchanged": true,
+        "no_free_endpoint": true
+      },
+      "maximum_reconstruction_error": 5.329070518200751e-15,
+      "maximum_margin_violation": 5.027089855502709e-13,
+      "free_fractions": [
+        0.30224609375,
+        0.1083984375,
+        0.03076171875
+      ],
+      "lower_endpoint_masses": [
+        0.34326171875,
+        0.44189453125,
+        0.48486328125
+      ],
+      "upper_endpoint_masses": [
+        0.3544921875,
+        0.44970703125,
+        0.484375
+      ],
+      "margin_atom_masses": [
+        0.7557997557997558,
+        0.27106227106227104,
+        0.07692307692307693
+      ]
+    }
+  ],
+  "pooled_by_ensemble": {
+    "gaussian": {
+      "free_fractions": [
+        0.2979736328125,
+        0.1009521484375,
+        0.0263671875
+      ],
+      "lower_endpoint_masses": [
+        0.3472900390625,
+        0.4443359375,
+        0.482666015625
+      ],
+      "upper_endpoint_masses": [
+        0.354736328125,
+        0.4547119140625,
+        0.490966796875
+      ],
+      "margin_atom_masses": [
+        0.7451159951159951,
+        0.25244200244200243,
+        0.06593406593406594
+      ]
+    },
+    "rademacher": {
+      "free_fractions": [
+        0.30126953125,
+        0.1085205078125,
+        0.0306396484375
+      ],
+      "lower_endpoint_masses": [
+        0.349365234375,
+        0.44873046875,
+        0.4906005859375
+      ],
+      "upper_endpoint_masses": [
+        0.349365234375,
+        0.4427490234375,
+        0.478759765625
+      ],
+      "margin_atom_masses": [
+        0.7533577533577533,
+        0.27136752136752135,
+        0.07661782661782661
+      ]
+    }
+  }
+}

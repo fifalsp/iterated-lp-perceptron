@@ -1,0 +1,286 @@
+{
+  "description": "Population recursion at alpha = 0.40 for Figure 2; no LP data enter.",
+  "name": "theory",
+  "alpha": 0.4,
+  "margins": [
+    0.6,
+    0.3,
+    0.03
+  ],
+  "margin_grid_max": 3.8,
+  "seed": 1729,
+  "column_power": 16,
+  "row_power": 12,
+  "max_nfev": 150,
+  "first_round": {
+    "a": 0.3848134335909694,
+    "q": 0.2996243544213968,
+    "rho": 0.8934721728369424,
+    "Qx": 0.7982925236339671,
+    "QFxx": 0.0979168780553639,
+    "width": 0.7786223875434587,
+    "value_squared": 0.19092275721367796,
+    "value": 0.43694708743013494,
+    "gamma": 1.4749178658330266,
+    "Qlambda": 2.17538271095345,
+    "Gamma": 0.40312016764525715
+  },
+  "checks": [
+    {
+      "round": 1,
+      "kappa": 0.6,
+      "q": 0.2996243544213968,
+      "coordinate_endpoint_mass_each": 0.3501878227893016,
+      "margin_atom": 0.7490608860534924,
+      "balance_atom_minus_q_over_alpha": 4.440892098500626e-16,
+      "coordinate_density_integral": 0.299624298125848,
+      "coordinate_density_integral_error": -5.6295548778173554e-08,
+      "margin_density_integral": 0.250929484390851,
+      "margin_tail_beyond_grid": 1.0542965226102231e-05,
+      "margin_total_mass": 1.0000009134095695,
+      "maximum_scaled_residual": 0.0,
+      "row_weight_sum": 1.0
+    },
+    {
+      "round": 2,
+      "kappa": 0.3,
+      "q": 0.1045843127136123,
+      "coordinate_endpoint_mass_each": 0.4477078436431938,
+      "margin_atom": 0.2614607817840313,
+      "balance_atom_minus_q_over_alpha": 5.551115123125783e-16,
+      "coordinate_density_integral": 0.10458428609136541,
+      "coordinate_density_integral_error": -2.6622246893093227e-08,
+      "margin_density_integral": 0.738497821873165,
+      "margin_tail_beyond_grid": 3.860606776560812e-05,
+      "margin_total_mass": 0.999997209724962,
+      "maximum_scaled_residual": 1.34320138028766e-15,
+      "row_weight_sum": 0.9999999999999998
+    },
+    {
+      "round": 3,
+      "kappa": 0.03,
+      "q": 0.027041735948168107,
+      "coordinate_endpoint_mass_each": 0.486479132025916,
+      "margin_atom": 0.06760433987041202,
+      "balance_atom_minus_q_over_alpha": -8.243405957841787e-15,
+      "coordinate_density_integral": 0.027041732163548347,
+      "coordinate_density_integral_error": -3.784619759944485e-09,
+      "margin_density_integral": 0.9323549610176565,
+      "margin_tail_beyond_grid": 3.498371406563058e-05,
+      "margin_total_mass": 0.9999942846021341,
+      "maximum_scaled_residual": 3.154817358070608e-14,
+      "row_weight_sum": 0.9999999999999999
+    }
+  ],
+  "rounds": [
+    {
+      "tau": 0.47021323850759544,
+      "rho": 0.5056319899453451,
+      "s": 0.22896051579000054,
+      "width": 0.2224189030609842,
+      "value_squared": 0.033843191042807114,
+      "gamma": 0.679519367213914,
+      "q": 0.1045843127136123,
+      "sd_score": 1.0066087744519505,
+      "row_cost_squared": 0.015626977396044375,
+      "free_second_mass": 0.033920474082216046,
+      "free_squared_norm": 0.32433615713574493,
+      "active_probability": 0.2614607817840313,
+      "row_residual_max": 1.34320138028766e-15,
+      "balance_residual": 7.410766236069849e-16,
+      "stationarity_residual_max": 1.1102230246251565e-16,
+      "round": 2,
+      "kappa": 0.3,
+      "previous_q": 0.2996243544213968,
+      "survival_ratio": 0.3490514411472812,
+      "accepted": true,
+      "maximum_scaled_residual": 1.34320138028766e-15,
+      "elapsed_seconds": 0.18549383315257728,
+      "root_evaluations": 15,
+      "attempts": [
+        {
+          "nfev": 7,
+          "error": 1.34320138028766e-15,
+          "positive_value": true,
+          "accepted": true
+        }
+      ],
+      "gram_condition_x": 1.0,
+      "gram_condition_lambda": 1.0,
+      "frozen_gram_min_eigenvalue": 0.7003756455786032,
+      "previous_diagonal_drift": 0.0,
+      "previous_diagonal_drift_over_q": 0.0,
+      "regression_covariance_min_eigenvalue": 0.6850773305055449,
+      "effective_tau": 0.4671261074230191,
+      "parameters": {
+        "a": [
+          -0.06495243752140421
+        ],
+        "b": [
+          0.035226321436857645
+        ],
+        "eta_x": [
+          0.4783036364575507
+        ],
+        "eta_r": [
+          0.13913039567997088
+        ],
+        "eta_lambda": [
+          0.03094522998957982
+        ]
+      },
+      "unclipped_score_covariance": [
+        [
+          6.753043555966046,
+          6.43773699833319
+        ],
+        [
+          6.43773699833319,
+          10.719961025353966
+        ]
+      ],
+      "unclipped_score_objective_covariance": [
+        [
+          -1.4583163250327944,
+          0.0
+        ],
+        [
+          -1.1875199589464693,
+          -1.7590132304264325
+        ]
+      ],
+      "innovation_box_product": 0.10774202453423504,
+      "single_time_box_upper_bound": 0.23995688135383442,
+      "active_row_particles": 4096,
+      "row_particles": 12288,
+      "row_gram_schur_over_gamma_squared": 1.000433664870478,
+      "gram_update_discrepancy": 1.5834708887885185e-05,
+      "frozen_diagonal_identity_error": 0.0,
+      "updated_frozen_gram_min_eigenvalue": 0.09618064802240711,
+      "updated_gram_min_eigenvalue": 0.12754180454136538,
+      "updated_gram_max_diagonal": 0.9293372900283692,
+      "free_squared_norm_after_resampling": 0.3243469490005687,
+      "updated_diagonal_drift": 0.0,
+      "updated_diagonal_drift_over_q": 0.0,
+      "updated_gram_diagonal": 0.9293372900283692
+    },
+    {
+      "tau": 0.33408468803641794,
+      "rho": 0.32411885100040105,
+      "s": 0.08642633941302419,
+      "width": 0.08094275767951489,
+      "value_squared": 0.005333261214700045,
+      "gamma": 0.47798116125002993,
+      "q": 0.027041735948168107,
+      "sd_score": 1.0021572725615435,
+      "row_cost_squared": 0.0012184688060646227,
+      "free_second_mass": 0.008883762647579986,
+      "free_squared_norm": 0.32852042726132014,
+      "active_probability": 0.06760433987041202,
+      "row_residual_max": 2.1040409141496144e-14,
+      "balance_residual": 3.154817358070608e-14,
+      "stationarity_residual_max": 2.7913435451942803e-14,
+      "round": 3,
+      "kappa": 0.03,
+      "previous_q": 0.1045843127136123,
+      "survival_ratio": 0.258563978158155,
+      "accepted": true,
+      "maximum_scaled_residual": 3.154817358070608e-14,
+      "elapsed_seconds": 0.2084278331603855,
+      "root_evaluations": 11,
+      "attempts": [
+        {
+          "nfev": 5,
+          "error": 3.154817358070608e-14,
+          "positive_value": true,
+          "accepted": true
+        }
+      ],
+      "gram_condition_x": 12.545655193153227,
+      "gram_condition_lambda": 5.044454738902173,
+      "frozen_gram_min_eigenvalue": 0.09618064802240711,
+      "previous_diagonal_drift": 0.0,
+      "previous_diagonal_drift_over_q": 0.0,
+      "regression_covariance_min_eigenvalue": 0.3083785765592323,
+      "effective_tau": 0.3333655277304805,
+      "parameters": {
+        "a": [
+          0.0009628449653177586,
+          -0.02789464875943702
+        ],
+        "b": [
+          0.0010231819912174672,
+          0.013798122254269879
+        ],
+        "eta_x": [
+          0.0835148907942273,
+          0.25679431203251585
+        ],
+        "eta_r": [
+          0.034753241942510414,
+          0.09584810015142466
+        ],
+        "eta_lambda": [
+          0.002813023241130174,
+          0.007758209544598641
+        ]
+      },
+      "unclipped_score_covariance": [
+        [
+          6.753043555966046,
+          6.43773699833319,
+          6.4848009985110995
+        ],
+        [
+          6.43773699833319,
+          10.719961025353966,
+          9.221026238235368
+        ],
+        [
+          6.4848009985110995,
+          9.221026238235368,
+          17.240738389249326
+        ]
+      ],
+      "unclipped_score_objective_covariance": [
+        [
+          -1.4583163250327944,
+          0.0,
+          0.0
+        ],
+        [
+          -1.1875199589464693,
+          -1.7590132304264325,
+          0.0
+        ],
+        [
+          -1.1733140476221187,
+          -1.0651685185081967,
+          -2.7006099279203934
+        ]
+      ],
+      "innovation_box_product": 0.028135926695037734,
+      "single_time_box_upper_bound": 0.19031805849608197,
+      "active_row_particles": 4096,
+      "row_particles": 16384,
+      "row_gram_schur_over_gamma_squared": 0.9944360368029265,
+      "gram_update_discrepancy": 8.7845051847113e-06,
+      "frozen_diagonal_identity_error": -1.1102230246251565e-16,
+      "updated_frozen_gram_min_eigenvalue": 0.043858949799923566,
+      "updated_gram_min_eigenvalue": 0.05236837430668044,
+      "updated_gram_max_diagonal": 0.9818421107354437,
+      "free_squared_norm_after_resampling": 0.32852353490322744,
+      "updated_diagonal_drift": -1.1102230246251565e-16,
+      "updated_diagonal_drift_over_q": -4.105590805091663e-15,
+      "updated_gram_diagonal": 0.9818421107354437
+    }
+  ],
+  "elapsed_seconds": 1.1854931670241058,
+  "environment": {
+    "python": "3.11",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "platform": "macOS"
+  },
+  "curves": "theory_curves.npz: for t = 1, 2, 3, x_t/xf_t (coordinate grid and density, integrating to q_t), u_t/uf_t (margin grid and density of the continuous part), k_t, q_t, atom_t (mass at kappa_t). The coordinate density is symmetrized; each endpoint +-1 has mass (1 - q_t)/2."
+}

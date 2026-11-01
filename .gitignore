@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.tmp
+.venv/
+.DS_Store
+# Outputs of the scripts (saved results live in data/ and figures/).
+output/
+results/

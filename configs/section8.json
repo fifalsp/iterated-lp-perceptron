@@ -1,0 +1,40 @@
+{
+  "description": "Section 8 (Numerical evaluation): density 0.60, quadratic margin schedule, finishing test.",
+  "alpha": 0.6,
+  "schedule": {
+    "type": "quadratic",
+    "formula": "kappa_t = offset + scale * ((horizon - t) / (horizon - 1))**2, t = 1, ..., rounds",
+    "offset": 0.01,
+    "scale": 0.5789153654719907,
+    "horizon": 150,
+    "rounds": 140,
+    "note": "kappa_1 = 0.5889153654719907 is 0.998 times the numerically computed first-LP feasibility limit 0.5900955565851611."
+  },
+  "finishing_test": {
+    "rounding_loss": "D_{1,21/5}(q) = sqrt(42 q / 5) * (2 sqrt(log(200 / q)) + log 4 / sqrt(log(200 / q)))",
+    "minimum_reserve": 0.001,
+    "resolved_scale": "0.01 < tau < 1000, q > 1e-10, survival ratio q_t / q_{t-1} > 1e-5, q_t > 100 * max scaled residual * q_{t-1}",
+    "maximum_rounds": 140
+  },
+  "population": {
+    "max_nfev": 100,
+    "time_cap_seconds": 900,
+    "snapshot_rounds": [1, 2, 3, 20, 60, 100, 120, 130, 134, 140],
+    "runs": [
+      {"name": "seed2047", "seed": 2047, "column_power": 14, "row_power": 10},
+      {"name": "seed2718", "seed": 2718, "column_power": 14, "row_power": 10},
+      {"name": "seed3141", "seed": 3141, "column_power": 14, "row_power": 11, "run_only_if_passed": "seed2047"}
+    ]
+  },
+  "finite_lps": {
+    "n": 1024,
+    "seeds": [6101, 6102, 6103],
+    "lp_time_limit_seconds": 120,
+    "case_time_cap_seconds": 600,
+    "population_reference": {
+      "run": "seed2047",
+      "rounds": [1, 2, 3],
+      "max_nfev": 120
+    }
+  }
+}

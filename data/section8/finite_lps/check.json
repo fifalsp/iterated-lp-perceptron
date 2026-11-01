@@ -1,0 +1,37 @@
+{
+  "description": "Regenerated matrices and objectives; checked all saved states of the Section 8 finite LPs.",
+  "folder": "data/section8/finite_lps",
+  "tolerance": 1e-12,
+  "all_checks_passed": true,
+  "cases": [
+    {
+      "seed": 6101,
+      "status": "lp_failure",
+      "saved_rounds": 0,
+      "largest_margin_deficit": 0.0,
+      "largest_row_product_error": 0.0
+    },
+    {
+      "seed": 6102,
+      "status": "integral",
+      "saved_rounds": 120,
+      "largest_margin_deficit": 4.017986499071924e-10,
+      "largest_row_product_error": 2.220446049250313e-15,
+      "final_round": 120,
+      "final_free_count": 0,
+      "final_sign_minimum_margin": 0.033715931472732885,
+      "first_positive_sign_round": 44
+    },
+    {
+      "seed": 6103,
+      "status": "integral",
+      "saved_rounds": 109,
+      "largest_margin_deficit": 1.2900014390027081e-10,
+      "largest_row_product_error": 1.887379141862766e-15,
+      "final_round": 109,
+      "final_free_count": 0,
+      "final_sign_minimum_margin": 0.05569822199279362,
+      "first_positive_sign_round": 40
+    }
+  ]
+}
