@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 """Figure 4 of the paper (Section 8): the density-0.60 schedule, built from saved data.
 
-Left: the free fraction q_t along the schedule, for the three population runs of
-Table 1 (gray) and the two feasible finite LP paths with N = 1024 (blue).
-Right: the margin kappa_t and the rounding cost D_alpha(q_t) of the population
-runs. The condition of Theorem 1.3 at zero target margin is kappa_t > D_alpha(q_t);
-all three runs first satisfy the stopping rule kappa_t - D_alpha(q_t) > 10^-3 at
-round 119.
+The free fraction q_t along the schedule, for the three population runs of
+Table 1 (gray) and the two feasible finite LP paths with N = 1024 (blue). The
+script also checks that all three runs first satisfy the stopping rule
+kappa_t - D_alpha(q_t) > 10^-3 at round 119.
 
 Fonts match the paper (LaTeX with mathpazo). If no LaTeX installation is
 found, Matplotlib's own math rendering is used instead.
@@ -105,10 +103,9 @@ def make_figure(config, args):
         require(reserve[-1] > MINIMUM_RESERVE and np.all(reserve[:-1] <= MINIMUM_RESERVE),
                 'the stopping round is not the first round passing the test')
 
-    fig, axs = plt.subplots(1, 2, figsize=(6.5, 2.55))
-    fig.subplots_adjust(left=.085, right=.985, top=.84, bottom=.17, wspace=.32)
+    fig, ax = plt.subplots(figsize=(3.6, 2.4))
+    fig.subplots_adjust(left=.16, right=.97, top=.96, bottom=.18)
 
-    ax = axs[0]
     for r in fin:
         t = np.arange(1, len(r['free']) + 1)
         positive = r['free'] > 0
@@ -121,31 +118,14 @@ def make_figure(config, args):
     ax.set_ylabel(r'Free fraction', fontsize=9)
     style_axis(ax)
 
-    ax = axs[1]
-    t = np.arange(1, stop + 1)
-    ax.plot(np.arange(1, len(margins) + 1)[:stop + 6], margins[:stop + 6], color=BLUE, lw=1.3, zorder=3)
-    for r in pop:
-        ax.plot(t, r['cost'], color=BLACK, alpha=RUN_ALPHA, lw=PREDICTION_LW, zorder=2)
-    ax.axvline(stop, color=BLACK, lw=.6, ls=(0, (3, 2)), alpha=.7, zorder=1)
-    ax.set_yscale('log')
-    ax.set_ylim(1e-2, 30)
-    ax.set_ylabel(r'Margin and rounding cost', fontsize=9)
-    style_axis(ax)
-
     handles = [Line2D([], [], color=BLACK, alpha=PREDICTION_ALPHA, lw=PREDICTION_LW),
-               Line2D([], [], color=BLUE, lw=1.1),
-               Line2D([], [], color=BLACK, alpha=PREDICTION_ALPHA, lw=PREDICTION_LW),
-               Line2D([], [], color=BLUE, lw=1.3)]
-    axs[0].legend(handles[:2], ['State evolution', r'Finite LPs, $N=1024$'], loc='lower left',
-                  frameon=False, fontsize=8, handlelength=2.2)
-    axs[1].legend([handles[3], handles[2]], [r'Margin $\kappa_t$', r'Rounding cost $\mathcal{D}_\alpha(\widehat q_t)$'],
-                  loc='upper right', frameon=False, fontsize=8, handlelength=2.2)
-    fig.text(.255, .93, r'(a) Free fraction', ha='center', fontsize=9.5)
-    fig.text(.755, .93, r'(b) Margin versus rounding cost', ha='center', fontsize=9.5)
+               Line2D([], [], color=BLUE, lw=1.1)]
+    ax.legend(handles, ['State evolution', r'Finite LPs, $N=1024$'], loc='lower left',
+              frameon=False, fontsize=8, handlelength=2.2)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     for extension in ['pdf', 'png']:
-        path = args.output_dir / ('numerics.' + extension)
+        path = args.output_dir / ('free-fraction.' + extension)
         metadata = {'CreationDate': None, 'ModDate': None} if extension == 'pdf' else {}
         fig.savefig(path, dpi=220, metadata=metadata)
         print('wrote', display_path(path))

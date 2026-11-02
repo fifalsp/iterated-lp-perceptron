@@ -12,17 +12,18 @@ Every table and figure can be rebuilt from the saved data in about 15
 seconds, and every experiment can be rerun from scratch (about 20 minutes on
 a laptop).
 
-## What is reproduced
+## Tables and figures
 
-| Paper item | Rebuild from saved data | Saved data used | Rerun the computation |
+| Paper item | Content | Rebuild from saved data | Rerun from scratch |
 |---|---|---|---|
-| **Figure 2** (Section 1.4): predicted and empirical laws of margins and coordinates, alpha = 0.40, N = 2048, Gaussian and Rademacher | `python3 scripts/make_figure2.py` | `data/alpha040/population/theory_curves.npz`, `data/alpha040/finite_lps/{gaussian,rademacher}_seed940{1..4}.npz` | `scripts/compute_alpha040_theory.py`, `scripts/run_alpha040_lps.py` |
-| **Table 1** (Section 8.2): stopping results of the three population runs | `python3 scripts/stopping_table.py` | `data/section8/population/seed{2047,2718,3141}.json` | `scripts/run_population.py` |
-| **Figure 4** (Section 8.2): (a) free fraction of the population runs and the finite LPs, (b) margin versus rounding cost | `python3 scripts/make_section8_figure.py` | `data/section8/population/*.json`, `data/section8/finite_lps/report.json` | `scripts/run_population.py`, `scripts/run_finite_lps.py` |
+| Figure 2 (Section 1.4) | Laws of coordinates and margins, alpha = 0.40 | `make_figure2.py` | `compute_alpha040_theory.py`, `run_alpha040_lps.py` |
+| Table 1 (Section 8.2) | Stopping rounds of the population runs, alpha = 0.60 | `stopping_table.py` | `run_population.py` |
+| Figure 4 (Section 8.2) | Free fraction of the population runs and the finite LPs | `make_section8_figure.py` | `run_population.py`, `run_finite_lps.py` |
 
-Figure numbers refer to the current version of the paper. The figures as
-they appear in the paper are in `figures/` (`state-evolution.pdf` and
-`numerics.pdf`, with PNG previews).
+All scripts are in `scripts/`, and the saved data they read are listed under
+[Repository layout](#repository-layout). Figure numbers refer to the current
+version of the paper. The figures as they appear in the paper are in
+`figures/` (`state-evolution.pdf` and `free-fraction.pdf`, with PNG previews).
 
 ## Installation
 
@@ -47,7 +48,7 @@ problem. They write to `output/` (ignored by git).
 
 ```bash
 python3 scripts/stopping_table.py          # output/stopping_table.tex and output/stopping_summary.json
-python3 scripts/make_section8_figure.py    # output/figures/numerics.{pdf,png}
+python3 scripts/make_section8_figure.py    # output/figures/free-fraction.{pdf,png}
 python3 scripts/make_figure2.py            # output/figures/state-evolution.{pdf,png}
 python3 scripts/verify_finite_lps.py       # check of the saved Section 8 LP states
 python3 scripts/verify_alpha040_lps.py     # check of the saved alpha = 0.40 LP states
@@ -58,10 +59,11 @@ reserve and the resolved-scale checks for every accepted round, confirms that
 each run stopped at its first qualifying round, and writes Table 1 exactly as
 it appears in the paper. `make_section8_figure.py` checks that the saved
 rounding losses match D_{1,21/5}(q_t) and that every run first passes the
-test at its last round. In our check with the pinned versions, Figure 4 came
-out byte-for-byte identical to `figures/numerics.pdf`. Figure 2 was drawn for the paper with Matplotlib 3.10.8; with that
-version its PNG is identical to `figures/state-evolution.png`, and with 3.9.4
-it is visually identical. Image bytes can also depend on installed fonts.
+test at its last round. Figures 2 and 4 were drawn for the paper with
+Matplotlib 3.10.8. With that version, Figure 4 is byte-for-byte identical to
+`figures/free-fraction.pdf` and the PNG of Figure 2 is identical to
+`figures/state-evolution.png`; with 3.9.4, Figure 2 is visually identical.
+Image bytes can also depend on installed fonts.
 
 The two `verify_*` scripts regenerate every matrix and objective from its
 seed, check their hashes, and check each saved LP state: the row products
@@ -144,7 +146,7 @@ passed the finishing test at round 119, and Table 1 was unchanged at the
 printed precision. The finite LPs depend on the population runs only through
 the schedule. Rerun with the pinned versions, they freeze exactly the same
 coordinates in every round and end in the same way (seed 6101 infeasible at
-the first LP; integral outputs at rounds 120 and 109; sign vectors feasible
+the first LP; every coordinate frozen at +-1 by rounds 120 and 109; sign vectors feasible
 from rounds 44 and 40), while the LP iterates differ by at most 1e-8. The
 alpha = 0.40 data were made with numpy 1.26.4 and scipy 1.11.4; with those
 versions the predicted curves and all eight LP runs were reproduced bit for
@@ -214,14 +216,11 @@ failures: the first LP is infeasible for seed 6101.
 
 ## Citation
 
-> **TODO:** replace `XXXX.XXXXX` by the arXiv identifier once it is available.
-
 ```bibtex
 @misc{ZhangLi2026IteratedLP,
   author = {Zhang, Jianan and Li, Shuangping},
   title  = {State Evolution and Universality of Iterated Linear Programs for the Binary Perceptron},
-  year   = {2026},
-  note   = {arXiv preprint arXiv:XXXX.XXXXX}
+  year   = {2026}
 }
 ```
 

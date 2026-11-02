@@ -9,7 +9,7 @@ below kappa_t - 1e-7, when the output becomes integral, after 140 rounds, or
 after 600 seconds. All outcomes are kept.
 
 The script first recomputes the population state after rounds 1-3 for the
-comparison panels of the distributions figure (seed 2047, 2^14 column and
+comparison of frozen fractions in Section 8.3 (seed 2047, 2^14 column and
 2^10 row particles per stratum) and compares the free fractions with the
 saved seed-2047 run.
 
